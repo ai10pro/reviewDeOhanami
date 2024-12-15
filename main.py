@@ -10,11 +10,11 @@ bert_model.load_state_dict(torch.load('bert_model.pt', weights_only=True))
 tokenizer = BertJapaneseTokenizer.from_pretrained('cl-tohoku/bert-base-japanese-v3')
 
 # 新しいレビューを入力
-new_review = ["会社では同じものを何年も前から使っていましたが、在宅勤務の時はなしで過ごしていたら、手首や肘が痛くなってきたので、自宅用に注文しました。"]
+new_review = ["自分を褒美するため買いました。高いけど、その分の価値がある！"]
 
 # レビューをトークナイズしてエンベディングを取得
 inputs = tokenizer(new_review, return_tensors='pt', padding=True, truncation=True, max_length=512)
-print(inputs)
+# print(inputs)
 with torch.no_grad():
     outputs = bert_model(**inputs)
 
