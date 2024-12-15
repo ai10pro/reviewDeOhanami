@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 import joblib
 
-with open('output.json', 'r', encoding='utf-8') as f:
+with open('input.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
 
 # レビューをトークナイズしてエンベディングを取得
